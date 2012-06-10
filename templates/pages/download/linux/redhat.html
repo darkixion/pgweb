@@ -1,0 +1,109 @@
+{%extends "base/page.html"%}
+{%block title%}Linux downloads (RedHat/CentOS/Fedora/Scientific){%endblock%}
+{%block contents%}
+
+<h1>Linux downloads (RedHat/CentOS/Fedora/Scientific)</h1>
+<p>
+PostgreSQL is available on these platforms by default. However,
+each version of the platform normally "snapshots" a specific version of
+PostgreSQL that is then supported throughout the lifetime of this platform.
+Since this can often mean a different version than preferred, the PostgreSQL
+project provides a repository of packages of all supported versions.
+</p>
+<p>
+Should packages not be available for your distribution, or there are
+issues with your package manager, there are graphical installers available.
+</p>
+<p>
+Finally, most Linux systems make it easy to build from source.
+</p>
+
+<h2>Included in distribution</h2>
+<p>
+These distributions all include PostgreSQL by default. To install
+PostgreSQL from these repositories, use the <i>yum</i> command:
+</p>
+<p>
+<code>
+yum install postgresql91
+</code>
+</p>
+<p>
+The repository contains many different packages including third party
+addons. The most command and important packages are (substitute the
+version number as required):
+</p>
+<ul>
+ <li>postgresql91 - client libraries and client binaries</li>
+ <li>postgresql91-server - core database server</li>
+ <li>postgresql91-contrib - additional supplied modules</li>
+ <li>postgresql91-devel - libraries and headers for C language development</li>
+ <li>pgadmin3_91 - pgAdmin III graphical administration utility</li>
+</ul>
+
+<h2>PostgreSQL Yum Repository</h2>
+<p>
+If the version supplied by your operating system is not the one you want,
+you can use the PostgreSQL Yum Repository. This repository will integrate
+with your normal systems and patch management, and provide automatic
+updates for all supported versions of PostgreSQL throughout the support
+<a href="/support/versioning/">lifetime</a> of PostgreSQL.
+</p>
+<p>
+To use the yum repository, you must first install the <i>repository RPM</i>.
+To do this, download the correct RPM from the
+<a href="http://yum.postgresql.org/repopackages.php">repository RPM listing</a>,
+and install it with commands like:
+</p>
+<p>
+<code>
+wget http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-redhat92-9.2-6.noarch.rpm
+rpm -i pgdg-redhat92-9.2-6.noarch.rpm 
+</code>
+</p>
+<p>
+Once this is done, you can proceed to install and update packages the
+same way as the ones included in the distribution. Package names in the
+PostgreSQL yum repository follows the same standard as the ones included
+in the main repositories.
+</p>
+
+<h2>Direct RPM download</h2>
+<p>
+If you cannot, or do not want to, use the yum based installation method,
+all the RPMs that are in the yum repository are available for
+<a href="http://yum.postgresql.org/rpmchart.php">direct download</a>
+and manual installation as well.
+</p>
+
+<h2>Graphical installer</h2>
+
+<p>
+One click installers are available for 32 and 64 bit Linux distributions
+and include PostgreSQL, pgAdmin, PL/Java and the PL/pgSQL debugger plugin.
+The installer has been tested with a number of recent Linux distributions
+and should work on Ubuntu 6.06 and above, Fedora 6 and above,
+CentOS/Red Hat Enterprise Linux 4 and above and others.
+</p>
+<p>
+<a href="http://www.enterprisedb.com/products/pgdownload.do">Download</a>
+the packages from EnterpriseDB.
+</p>
+
+<p>
+<b>Note: The one click installers do not integrate with
+platform-specific packaging systems.</b>
+</p>
+
+<p>
+<i>The one click installers are maintained by Dave Page at
+<a href="http://www.enterprisedb.com">EnterpriseDB</a>.</i>
+</p>
+
+<h2>Build from source</h2>
+<p>
+The source code can be found in the main <a href="/pub/source">file browser</a>.
+Instructions for building from source can be found in the
+<a href="/docs/current/static/installation.html">documentation</a>.
+</p>
+{%endblock%}

@@ -1,13 +1,13 @@
 {%extends "base/page.html"%}
-{%block title%}Linux downloads (other){%endblock%}
+{%block title%}Linux downloads (Ubuntu){%endblock%}
 {%block contents%}
 
-<h1>Linux downloads (other)</h1>
+<h1>Linux downloads (Ubuntu)</h1>
 <p>
-PostgreSQL is available integrated with the package management on most
-Linux platforms. When available, this is the recommended way to install
-PostgreSQL, since it provides proper integration with the operating system,
-including automatic patching and other management functionality.
+PostgreSQL is available in all Ubuntu versions by default. However,
+Ubuntu "snapshots" a specific version of PostgreSQL that is then
+supported throughout the lifetime of that Ubuntu version. Other
+versions of PostgreSQL are available through a <i>PPA</i> repository.
 </p>
 <p>
 Should packages not be available for your distribution, or there are
@@ -17,10 +17,33 @@ issues with your package manager, there are graphical installers available.
 Finally, most Linux systems make it easy to build from source.
 </p>
 
-<h2>Integrated installation</h2>
+<h2>Included in distribution</h2>
 <p>
-For information about how to perform this installation, please consult
-the documentation for your Linux distribution.
+Ubuntu includes PostgreSQL by default. To install PostgreSQL on
+Ubuntu, use the <i>apt-get</i> (or other apt-driving) command:
+</p>
+<code>
+apt-get install postgresql-9.1
+</code>
+XXX: package name descriptions!
+</p>
+
+<h2>Ubuntu PPA</h2>
+<p>
+Other versions of PostgreSQL than the standard one for a specific
+Ubuntu version are available in the
+<a href="https://launchpad.net/~pitti/+archive/postgresql">PostgreSQL
+backports PPA</a> repository. To enable this repository, run the
+command:
+</p>
+<p>
+<code>
+sudo add-apt-repository ppa:pitti/postgresql
+</code>
+</p>
+<p>
+Once this is done, you can proceed to install and update packages the
+same way as the ones included in the distribution.
 </p>
 
 <h2>Graphical installer</h2>
