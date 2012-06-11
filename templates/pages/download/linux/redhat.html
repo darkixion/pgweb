@@ -25,20 +25,45 @@ PostgreSQL from these repositories, use the <i>yum</i> command:
 </p>
 <p>
 <code>
-yum install postgresql91
+yum install postgresql
 </code>
 </p>
+<p>
+Which version of PostgreSQL you get will depend on the version of
+the distribution:
+<div class="tblBasic">
+ <table border="0" cellpadding="0" cellspacing="0" class="tblBasicGrey">
+  <tr>
+   <th class="colFirst">Distribution</th>
+   <th class="colLast">Version</th>
+  </tr>
+  <tr>
+   <td class="colFirst">RHEL/CentOS/SL 5</td>
+   <td class="colLast">8.1 (also supplies package postgresql84)</td>
+  </tr>
+  <tr>
+   <td class="colFirst">RHEL/CentOS/SL 6</td>
+   <td class="colLast">8.4</td>
+  </tr>
+  <tr class="lastrow">
+   <td class="colFirst">Fedora 16, 17</td>
+   <td class="colLast">9.1</td>
+  </tr>
+ </table>
+</div>
+</p>
+
 <p>
 The repository contains many different packages including third party
 addons. The most command and important packages are (substitute the
 version number as required):
 </p>
 <ul>
- <li>postgresql91 - client libraries and client binaries</li>
- <li>postgresql91-server - core database server</li>
- <li>postgresql91-contrib - additional supplied modules</li>
- <li>postgresql91-devel - libraries and headers for C language development</li>
- <li>pgadmin3_91 - pgAdmin III graphical administration utility</li>
+ <li>postgresql - client libraries and client binaries</li>
+ <li>postgresql-server - core database server</li>
+ <li>postgresql-contrib - additional supplied modules</li>
+ <li>postgresql-devel - libraries and headers for C language development</li>
+ <li>pgadmin3 - pgAdmin III graphical administration utility</li>
 </ul>
 
 <h2>PostgreSQL Yum Repository</h2>
@@ -57,16 +82,21 @@ and install it with commands like:
 </p>
 <p>
 <code>
-wget http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-redhat92-9.2-6.noarch.rpm
-rpm -i pgdg-redhat92-9.2-6.noarch.rpm 
+rpm -i http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-redhat92-9.2-6.noarch.rpm
 </code>
 </p>
 <p>
 Once this is done, you can proceed to install and update packages the
 same way as the ones included in the distribution. Package names in the
 PostgreSQL yum repository follows the same standard as the ones included
-in the main repositories.
+in the main repositories, but include the version number, such as:
 </p>
+<ul>
+ <li>postgresql91</li>
+ <li>postgresql91-server</li>
+ <li>postgresql91-contrib</li>
+ <li>pgadmin3_91</li>
+</ul>
 
 <h2>Direct RPM download</h2>
 <p>
